@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老哥网 · 介绍页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', '宋体', 'SimSun', serif;
+            background-color: #f7f4ed;
+            color: #2c2b28;
+            line-height: 1.8;
+            padding: 0 24px;
+        }
+
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 48px 0 64px;
+        }
+
+        /* 导航 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #d9d2c5;
+            margin-bottom: 40px;
+        }
+
+        .site-title {
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            color: #3f3a33;
+        }
+
+        .nav-links a {
+            color: #5c554b;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-left: 24px;
+            border-bottom: 1px dotted transparent;
+            transition: border-color 0.25s;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #8b7f70;
+        }
+
+        @media (max-width: 540px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links a {
+                margin-left: 0;
+                margin-right: 20px;
+            }
+        }
+
+        /* hero */
+        .hero {
+            margin-bottom: 48px;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            line-height: 1.3;
+            color: #2e2a24;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #4b453c;
+            max-width: 680px;
+        }
+
+        /* 引用块 / 提示框 */
+        .inset-box {
+            background: #f0ebe2;
+            border-left: 6px solid #b8aa96;
+            padding: 20px 24px;
+            margin: 40px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 1rem;
+        }
+
+        .inset-box em {
+            font-style: italic;
+            color: #5a4f40;
+        }
+
+        .inset-box strong {
+            font-weight: 500;
+            color: #3d352b;
+        }
+
+        /* 通用标题 */
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 400;
+            margin: 48px 0 20px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #d9d2c5;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 28px 0 12px;
+            color: #3f3a33;
+        }
+
+        p {
+            margin-bottom: 18px;
+        }
+
+        /* 场景卡片 — 文章式 */
+        .scene-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin: 32px 0 20px;
+        }
+
+        .scene-card {
+            flex: 1 1 220px;
+            background: #fcfaf6;
+            padding: 24px 20px;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            border: 1px solid #e3ddd2;
+        }
+
+        .scene-card .scene-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #9a8e7d;
+            margin-bottom: 8px;
+        }
+
+        .scene-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* 常见说明列表 */
+        .faq-list {
+            margin: 28px 0 20px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .faq-list li {
+            margin-bottom: 18px;
+            padding-left: 28px;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .faq-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #a39786;
+        }
+
+        .faq-list li strong {
+            font-weight: 500;
+            color: #3d352b;
+        }
+
+        /* 链接自然嵌入 */
+        a {
+            color: #5f5340;
+            text-decoration: underline;
+            text-decoration-color: #cac0b0;
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.2s;
+        }
+
+        a:hover {
+            text-decoration-color: #7f6f5a;
+        }
+
+        /* 底部 */
+        footer {
+            margin-top: 64px;
+            padding-top: 20px;
+            border-top: 1px solid #d9d2c5;
+            font-size: 0.9rem;
+            color: #7b7366;
+            text-align: center;
+        }
+
+        footer span {
+            display: inline-block;
+            margin: 0 8px;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .inset-box {
+                padding: 16px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 顶部导航 -->
+    <nav>
+        <div class="site-title">老哥网</div>
+        <div class="nav-links">
+            <a href="#intro">介绍</a>
+            <a href="#scenes">场景</a>
+            <a href="#faq">说明</a>
+        </div>
+    </nav>
+
+    <!-- hero 区域 -->
+    <div class="hero" id="intro">
+        <h1>一个偏向实用的信息聚合地</h1>
+        <p>
+            你打开这个页面，多半是想确认「老哥网」到底能做什么。不必绕弯子——这里不卖课，不追热点，
+            更像一个由用户自发整理的经验书架。我们试着把话说得清楚些。
+        </p>
+    </div>
+
+    <!-- 引用块 / 提示框 -->
+    <div class="inset-box">
+        <em>如果你只是偶然路过</em>，不妨先看下面三个场景模块。大多数人在五分钟内就能判断，
+        这个叫 <a href="https://on-laoge.com">老哥网</a> 的地方，是否跟自己的需求对得上。
+    </div>
+
+    <!-- 三个场景模块 -->
+    <h2 id="scenes">你可能会在什么情况下找到这里</h2>
+    <div class="scene-grid">
+        <div class="scene-card">
+            <div class="scene-label">场景 · 一</div>
+            <p><strong>检索某个老社区的讨论</strong><br>
+            有些话题在主流平台搜起来就像大海捞针。在这里，你能看到带年份的归档帖、冷门关键词的索引，以及一些不被算法推荐的内容碎片。</p>
+        </div>
+        <div class="scene-card">
+            <div class="scene-label">场景 · 二</div>
+            <p><strong>对比几种不太显眼的方案</strong><br>
+            无论是工具、方法还是小众资源，<a href="https://on-laoge.com">老哥网</a> 上的帖子往往更注重实效而非话术。你可以看到不同人的实测反馈，而不是千篇一律的推广语。</p>
+        </div>
+        <div class="scene-card">
+            <div class="scene-label">场景 · 三</div>
+            <p><strong>找一个能安静看帖的角落</strong><br>
+            没有弹窗、没有强制登录、没有算法推荐的时间线。页面结构简单，更像早期的论坛样式——你翻页，你阅读，你决定去留。</p>
+        </div>
+    </div>
+
+    <!-- 常见说明 -->
+    <h2 id="faq">常见说明（不是 FAQ 模板，只是几条实在话）</h2>
+    <ul class="faq-list">
+        <li>
+            <strong>内容来源</strong> —— 站内大部分帖子由注册用户自行发布，少量来自网络公开存档。
+            管理员只做基础格式整理，不修改原文观点。你可以把每条内容看作一个独立的发言。
+        </li>
+        <li>
+            <strong>时效性</strong> —— 部分帖子发表于数年前，具体链接、工具版本可能已变更。
+            建议你在决定使用某条信息之前，顺手再核实一下最新状态。
+        </li>
+        <li>
+            <strong>搜索与浏览</strong> —— 首页没有推荐流，也不设猜你喜欢。
+            你可以通过分类标签或站内搜索找到目标板块，也可以直接顺着一个话题往下翻。
+        </li>
+        <li>
+            <strong>关于「老哥」</strong> —— 这两个字在这里更像一种随和的称呼，不特指性别或年龄。
+            如果你愿意，也可以把它理解为一个没有身份门槛的交流记号。
+        </li>
+    </ul>
+
+    <!-- 又一段自然嵌入链接的叙述 -->
+    <p style="margin-top: 20px;">
+        如果以上这些描述让你觉得还算对味，不妨直接去 <a href="https://on-laoge.com">老哥网</a> 随便翻翻。
+        首页没有任何催促注册的弹窗，你大可以先逛一圈，再决定要不要留下。
+    </p>
+
+    <!-- 页脚 -->
+    <footer>
+        <span>内容仅供参考</span>
+        <span>·</span>
+        <span>不构成任何建议</span>
+        <span>·</span>
+        <span>© 老哥网 · 介绍页</span>
+    </footer>
+
+</div>
+</body>
+</html>
